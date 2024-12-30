@@ -1,10 +1,10 @@
-﻿using LavanderTyperWeb.Application.Features.Responses.Companies;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Features.Responses.Companies;
 
-namespace LavanderTyperWeb.Application.Features.Queries.Companies
+namespace LTW.Organization.Application.Features.Queries.Companies
 {
-    public class GetCompanyListQuery : Query<GetCompanyListQueryResponse>
-    {
-        public GetCompanyListQuery() { }
-    }
+  public class GetCompanyListQuery : Query<GetCompanyListQueryResponse>
+  {
+    public GetCompanyListQuery() { }
+  }
 }

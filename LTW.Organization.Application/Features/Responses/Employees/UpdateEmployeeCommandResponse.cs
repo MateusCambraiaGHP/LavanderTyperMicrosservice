@@ -1,18 +1,18 @@
-﻿using LavanderTyperWeb.Application.Features.ViewModel.Employees;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Features.ViewModel.Employees;
 
-namespace LavanderTyperWeb.Application.Features.Responses.Employees
+namespace LTW.Organization.Application.Features.Responses.Employees
 {
-    public class UpdateEmployeeCommandResponse : BaseHandlerResponse
-    {
-        public EmployeeViewModel Response { get; set; } = new();
+  public class UpdateEmployeeCommandResponse : BaseHandlerResponse
+  {
+    public EmployeeViewModel Response { get; set; } = new();
 
-        public UpdateEmployeeCommandResponse() { }
+    public UpdateEmployeeCommandResponse() { }
 
-        public UpdateEmployeeCommandResponse(EmployeeViewModel response)
-            : base() => Response = response;
+    public UpdateEmployeeCommandResponse(EmployeeViewModel response)
+        : base() => Response = response;
 
-        public UpdateEmployeeCommandResponse(bool success, string message = "")
-            : base(success, message) { }
-    }
+    public UpdateEmployeeCommandResponse(bool success, string message = "")
+        : base(success, message) { }
+  }
 }

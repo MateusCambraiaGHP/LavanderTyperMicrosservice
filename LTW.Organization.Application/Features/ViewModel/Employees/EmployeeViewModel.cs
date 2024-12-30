@@ -1,20 +1,20 @@
-﻿using LavanderTyperWeb.Application.Features.ViewModel.Commom;
+﻿using LTW.Organization.Application.Features.ViewModel.Commom;
 using System.Text.Json.Serialization;
 
-namespace LavanderTyperWeb.Application.Features.ViewModel.Employees
+namespace LTW.Organization.Application.Features.ViewModel.Employees
 {
-    public class EmployeeViewModel : BaseViewModel
+  public class EmployeeViewModel : BaseViewModel
+  {
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
+
+    [JsonConstructor]
+    public EmployeeViewModel(string firstName, string lastName)
     {
-        public string FirstName { get; set; } = string.Empty;
-        public string LastName { get; set; } = string.Empty;
-
-        [JsonConstructor]
-        public EmployeeViewModel(string firstName, string lastName)
-        {
-            FirstName = firstName;
-            LastName = lastName;
-        }
-
-        public EmployeeViewModel() { }
+      FirstName = firstName;
+      LastName = lastName;
     }
+
+    public EmployeeViewModel() { }
+  }
 }

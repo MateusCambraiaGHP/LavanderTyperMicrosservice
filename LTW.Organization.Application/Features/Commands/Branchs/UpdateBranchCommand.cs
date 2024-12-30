@@ -1,13 +1,13 @@
-﻿using LavanderTyperWeb.Application.Dtos.Branchs;
-using LavanderTyperWeb.Application.Features.Responses.Branchs;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Dtos.Branchs;
+using LTW.Organization.Application.Features.Responses.Branchs;
 
-namespace LavanderTyperWeb.Application.Features.Commands.Branchs
+namespace LTW.Organization.Application.Features.Commands.Branchs
 {
-    public class UpdateBranchCommand : Command<UpdateBranchCommandResponse>
-    {
-        public UpdateBranchDto Request { get; init; }
+  public class UpdateBranchCommand : Command<UpdateBranchCommandResponse>
+  {
+    public UpdateBranchDto Request { get; init; }
 
-        public UpdateBranchCommand(UpdateBranchDto request) => Request = request;
-    }
+    public UpdateBranchCommand(UpdateBranchDto request) => Request = request;
+  }
 }

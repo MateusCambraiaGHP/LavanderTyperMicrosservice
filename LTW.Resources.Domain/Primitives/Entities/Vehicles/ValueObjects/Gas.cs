@@ -1,24 +1,24 @@
 ﻿using LavanderTyperWeb.Core.DomainObjects;
-using LavanderTyperWeb.Domain.Primitives.Common.ValueObjects;
+using LTW.Resources.Domain.Primitives.Common.ValueObjects;
 
-namespace LavanderTyperWeb.Domain.Primitives.Entities.Vehicles.ValueObjects
+namespace LTW.Resources.Domain.Primitives.Entities.Vehicles.ValueObjects
 {
-    public class Gas : ValueObject
+  public class Gas : ValueObject
+  {
+    public double Price { get; set; }
+    public DateOnly Date { get; set; }
+
+    private Gas() { }
+
+    public Gas(double price, DateOnly date)
     {
-        public double Price { get; set; }
-        public DateOnly Date { get; set; }
-
-        private Gas() { }
-
-        public Gas(double price, DateOnly date)
-        {
-            Price = price;
-            Date = date;
-        }
-
-        public override IEnumerable<object> GetAtomicValues()
-        {
-            yield return new object[] { Price, Date };
-        }
+      Price = price;
+      Date = date;
     }
+
+    public override IEnumerable<object> GetAtomicValues()
+    {
+      yield return new object[] { Price, Date };
+    }
+  }
 }

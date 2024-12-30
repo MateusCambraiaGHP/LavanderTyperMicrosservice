@@ -1,13 +1,13 @@
-﻿using LavanderTyperWeb.Application.Dtos.Companies;
-using LavanderTyperWeb.Application.Features.Responses.Companies;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Dtos.Companies;
+using LTW.Organization.Application.Features.Responses.Companies;
 
-namespace LavanderTyperWeb.Application.Features.Commands.Companies
+namespace LTW.Organization.Application.Features.Commands.Companies
 {
-    public class UpdateCompanyCommand : Command<UpdateCompanyCommandResponse>
-    {
-        public UpdateCompanyDto Request { get; init; }
+  public class UpdateCompanyCommand : Command<UpdateCompanyCommandResponse>
+  {
+    public UpdateCompanyDto Request { get; init; }
 
-        public UpdateCompanyCommand(UpdateCompanyDto request) => Request = request;
-    }
+    public UpdateCompanyCommand(UpdateCompanyDto request) => Request = request;
+  }
 }

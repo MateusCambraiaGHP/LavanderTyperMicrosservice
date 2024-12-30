@@ -1,19 +1,19 @@
-﻿using LavanderTyperWeb.Application.Features.ViewModel.Vehicles;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Resources.Application.Features.ViewModel.Vehicles;
 
-namespace LavanderTyperWeb.Application.Features.Responses.Vehicles
+namespace LTW.Resources.Application.Features.Responses.Vehicles
 {
-    public class GetVehicleByIdQueryResponse : BaseHandlerResponse
-    {
-        public VehicleViewModel Employee { get; set; } = new();
+  public class GetVehicleByIdQueryResponse : BaseHandlerResponse
+  {
+    public VehicleViewModel Employee { get; set; } = new();
 
-        public GetVehicleByIdQueryResponse()
-            : base() { }
+    public GetVehicleByIdQueryResponse()
+        : base() { }
 
-        public GetVehicleByIdQueryResponse(VehicleViewModel employeeViewModel)
-            : base("Employee created sucess") => Employee = employeeViewModel;
+    public GetVehicleByIdQueryResponse(VehicleViewModel employeeViewModel)
+        : base("Employee created sucess") => Employee = employeeViewModel;
 
-        public GetVehicleByIdQueryResponse(bool success, string message)
-            : base(success, message) { }
-    }
+    public GetVehicleByIdQueryResponse(bool success, string message)
+        : base(success, message) { }
+  }
 }

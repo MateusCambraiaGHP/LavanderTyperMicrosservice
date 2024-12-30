@@ -1,14 +1,14 @@
 ﻿using FluentValidation;
-using LavanderTyperWeb.Application.Features.Commands.Equipaments;
+using LTW.Resources.Application.Features.Commands.Equipaments;
 
-namespace LavanderTyperWeb.Application.Features.Validations.Equipaments
+namespace LTW.Resources.Application.Features.Validations.Equipaments
 {
-    public class UpdateEquipamentCommandValidation : AbstractValidator<UpdateEquipamentCommand>
+  public class UpdateEquipamentCommandValidation : AbstractValidator<UpdateEquipamentCommand>
+  {
+    public UpdateEquipamentCommandValidation()
     {
-        public UpdateEquipamentCommandValidation()
-        {
-            RuleFor(c => c.Request.Name)
-                .NotEmpty().WithMessage("first name cannot be empty");
-        }
+      RuleFor(c => c.Request.Name)
+          .NotEmpty().WithMessage("first name cannot be empty");
     }
+  }
 }

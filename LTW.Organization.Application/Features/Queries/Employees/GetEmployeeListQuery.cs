@@ -1,10 +1,10 @@
-﻿using LavanderTyperWeb.Application.Features.Responses.Employees;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Features.Responses.Employees;
 
-namespace LavanderTyperWeb.Application.Features.Queries.Employees
+namespace LTW.Organization.Application.Features.Queries.Employees
 {
-    public class GetEmployeeListQuery : Query<GetEmployeeListQueryResponse>
-    {
-        public GetEmployeeListQuery() { }
-    }
+  public class GetEmployeeListQuery : Query<GetEmployeeListQueryResponse>
+  {
+    public GetEmployeeListQuery() { }
+  }
 }

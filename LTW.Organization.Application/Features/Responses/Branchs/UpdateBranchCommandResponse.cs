@@ -1,18 +1,18 @@
-﻿using LavanderTyperWeb.Application.Features.ViewModel.Branchs;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Features.ViewModel.Branchs;
 
-namespace LavanderTyperWeb.Application.Features.Responses.Branchs
+namespace LTW.Organization.Application.Features.Responses.Branchs
 {
-    public class UpdateBranchCommandResponse : BaseHandlerResponse
-    {
-        public BranchViewModel Response { get; set; } = new();
+  public class UpdateBranchCommandResponse : BaseHandlerResponse
+  {
+    public BranchViewModel Response { get; set; } = new();
 
-        public UpdateBranchCommandResponse() { }
+    public UpdateBranchCommandResponse() { }
 
-        public UpdateBranchCommandResponse(BranchViewModel response)
-            : base() => Response = response;
+    public UpdateBranchCommandResponse(BranchViewModel response)
+        : base() => Response = response;
 
-        public UpdateBranchCommandResponse(bool success, string message = "")
-            : base(success, message) { }
-    }
+    public UpdateBranchCommandResponse(bool success, string message = "")
+        : base(success, message) { }
+  }
 }

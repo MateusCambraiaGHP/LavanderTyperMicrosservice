@@ -1,13 +1,13 @@
-﻿using LavanderTyperWeb.Application.Dtos.Equipaments;
-using LavanderTyperWeb.Application.Features.Responses.Equipaments;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Resources.Application.Dtos.Equipaments;
+using LTW.Resources.Application.Features.Responses.Equipaments;
 
-namespace LavanderTyperWeb.Application.Features.Commands.Equipaments
+namespace LTW.Resources.Application.Features.Commands.Equipaments
 {
-    public class UpdateEquipamentCommand : Command<UpdateEquipamentCommandResponse>
-    {
-        public UpdateEquipamentDto Request { get; init; }
+  public class UpdateEquipamentCommand : Command<UpdateEquipamentCommandResponse>
+  {
+    public UpdateEquipamentDto Request { get; init; }
 
-        public UpdateEquipamentCommand(UpdateEquipamentDto request) => Request = request;
-    }
+    public UpdateEquipamentCommand(UpdateEquipamentDto request) => Request = request;
+  }
 }

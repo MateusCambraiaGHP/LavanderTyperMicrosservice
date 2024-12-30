@@ -1,13 +1,13 @@
-﻿using LavanderTyperWeb.Application.Dtos.Vehicles;
-using LavanderTyperWeb.Application.Features.Responses.Vehicles;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Resources.Application.Dtos.Vehicles;
+using LTW.Resources.Application.Features.Responses.Vehicles;
 
-namespace LavanderTyperWeb.Application.Features.Commands.Vehicles
+namespace LTW.Resources.Application.Features.Commands.Vehicles
 {
-    public class UpdateVehicleCommand : Command<UpdateVehicleCommandResponse>
-    {
-        public UpdateVehicleDto Request { get; init; }
+  public class UpdateVehicleCommand : Command<UpdateVehicleCommandResponse>
+  {
+    public UpdateVehicleDto Request { get; init; }
 
-        public UpdateVehicleCommand(UpdateVehicleDto request) => Request = request;
-    }
+    public UpdateVehicleCommand(UpdateVehicleDto request) => Request = request;
+  }
 }

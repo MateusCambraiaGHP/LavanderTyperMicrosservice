@@ -1,13 +1,13 @@
-﻿using LavanderTyperWeb.Application.Dtos.Companies;
-using LavanderTyperWeb.Application.Features.Responses.Companies;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Dtos.Companies;
+using LTW.Organization.Application.Features.Responses.Companies;
 
-namespace LavanderTyperWeb.Application.Features.Commands.Companies
+namespace LTW.Organization.Application.Features.Commands.Companies
 {
-    public class CreateCompanyCommand : Command<CreateCompanyCommandResponse>
-    {
-        public CreateCompanyDto Request { get; init; }
+  public class CreateCompanyCommand : Command<CreateCompanyCommandResponse>
+  {
+    public CreateCompanyDto Request { get; init; }
 
-        public CreateCompanyCommand(CreateCompanyDto request) => Request = request;
-    }
+    public CreateCompanyCommand(CreateCompanyDto request) => Request = request;
+  }
 }

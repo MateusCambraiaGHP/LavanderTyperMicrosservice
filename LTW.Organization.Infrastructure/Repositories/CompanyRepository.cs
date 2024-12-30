@@ -1,11 +1,11 @@
-﻿using LavanderTyperWeb.Data.Common.Interfaces;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
+﻿using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
 using LavanderTyperWeb.Domain.Primitives.Entities.Companies;
+using LTW.Organization.Infrastructure.Common.Interfaces;
 
-namespace LavanderTyperWeb.Data.Repositories
+namespace LTW.Organization.Infrastructure.Repositories
 {
-    public class CompanyRepository : Repository<Company>, ICompanyRepository
-    {
-        public CompanyRepository(IApplicationDbContext context) : base(context) { }
-    }
+  public class CompanyRepository : Repository<Company>, ICompanyRepository
+  {
+    public CompanyRepository(IApplicationDbContext context) : base(context) { }
+  }
 }

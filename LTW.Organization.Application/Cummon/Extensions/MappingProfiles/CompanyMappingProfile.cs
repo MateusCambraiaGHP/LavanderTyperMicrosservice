@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using LavanderTyperWeb.Application.Dtos.Companies;
-using LavanderTyperWeb.Application.Features.ViewModel.Companies;
 using LavanderTyperWeb.Domain.Primitives.Entities.Companies;
+using LTW.Organization.Application.Dtos.Companies;
+using LTW.Organization.Application.Features.ViewModel.Companies;
 
-namespace LavanderTyperWeb.Application.Cummon.Extensions.MappingProfiles
+namespace LTW.Organization.Application.Cummon.Extensions.MappingProfiles
 {
-    public class CompanyMappingProfile : Profile
+  public class CompanyMappingProfile : Profile
+  {
+    public CompanyMappingProfile()
     {
-        public CompanyMappingProfile()
-        {
-            CreateMap<Company, CompanyViewModel>().ReverseMap();
-            CreateMap<Company, UpdateCompanyDto>().ReverseMap();
-        }
+      CreateMap<Company, CompanyViewModel>().ReverseMap();
+      CreateMap<Company, UpdateCompanyDto>().ReverseMap();
     }
+  }
 }

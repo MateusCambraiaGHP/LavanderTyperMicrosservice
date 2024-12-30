@@ -1,13 +1,13 @@
-﻿using LavanderTyperWeb.Application.Dtos.Vehicles;
-using LavanderTyperWeb.Application.Features.Responses.Vehicles;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Resources.Application.Dtos.Vehicles;
+using LTW.Resources.Application.Features.Responses.Vehicles;
 
-namespace LavanderTyperWeb.Application.Features.Commands.Vehicles
+namespace LTW.Resources.Application.Features.Commands.Vehicles
 {
-    public class CreateVehicleCommand : Command<CreateVehicleCommandResponse>
-    {
-        public CreateVehicleDto Request { get; init; }
+  public class CreateVehicleCommand : Command<CreateVehicleCommandResponse>
+  {
+    public CreateVehicleDto Request { get; init; }
 
-        public CreateVehicleCommand(CreateVehicleDto request) => Request = request;
-    }
+    public CreateVehicleCommand(CreateVehicleDto request) => Request = request;
+  }
 }

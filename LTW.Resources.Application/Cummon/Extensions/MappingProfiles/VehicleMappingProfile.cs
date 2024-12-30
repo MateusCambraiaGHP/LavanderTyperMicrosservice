@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using LavanderTyperWeb.Application.Dtos.Vehicles;
-using LavanderTyperWeb.Application.Features.ViewModel.Vehicles;
 using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles;
+using LTW.Resources.Application.Dtos.Vehicles;
+using LTW.Resources.Application.Features.ViewModel.Vehicles;
 
-namespace LavanderTyperWeb.Application.Cummon.Extensions.MappingProfiles
+namespace LTW.Resources.Application.Cummon.Extensions.MappingProfiles
 {
-    public class VehicleMappingProfile : Profile
+  public class VehicleMappingProfile : Profile
+  {
+    public VehicleMappingProfile()
     {
-        public VehicleMappingProfile()
-        {
-            CreateMap<Vehicle, VehicleViewModel>().ReverseMap();
-            CreateMap<Vehicle, UpdateVehicleDto>().ReverseMap();
-        }
+      CreateMap<Vehicle, VehicleViewModel>().ReverseMap();
+      CreateMap<Vehicle, UpdateVehicleDto>().ReverseMap();
     }
+  }
 }

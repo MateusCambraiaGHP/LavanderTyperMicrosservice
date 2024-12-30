@@ -1,16 +1,16 @@
 ﻿using FluentValidation;
-using LavanderTyperWeb.Application.Features.Commands.Vehicles;
+using LTW.Resources.Application.Features.Commands.Vehicles;
 
-namespace LavanderTyperWeb.Application.Features.Validations.Vehicles
+namespace LTW.Resources.Application.Features.Validations.Vehicles
 {
-    public class UpdateVehicleCommandValidation : AbstractValidator<UpdateVehicleCommand>
+  public class UpdateVehicleCommandValidation : AbstractValidator<UpdateVehicleCommand>
+  {
+    public UpdateVehicleCommandValidation()
     {
-        public UpdateVehicleCommandValidation()
-        {
-            RuleFor(c => c.Request.Name)
-                .NotEmpty().WithMessage("The first name cannot be empty");
-            RuleFor(c => c.Request.LicensePlate)
-                .NotEmpty().WithMessage("first name cannot be empty");
-        }
+      RuleFor(c => c.Request.Name)
+          .NotEmpty().WithMessage("The first name cannot be empty");
+      RuleFor(c => c.Request.LicensePlate)
+          .NotEmpty().WithMessage("first name cannot be empty");
     }
+  }
 }

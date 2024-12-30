@@ -1,12 +1,12 @@
-﻿using LavanderTyperWeb.Application.Features.Responses.Employees;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Features.Responses.Employees;
 
-namespace LavanderTyperWeb.Application.Features.Queries.Employees
+namespace LTW.Organization.Application.Features.Queries.Employees
 {
-    public class GetEmployeeByIdQuery : Query<GetEmployeeByIdQueryResponse>
-    {
-        public Guid Id { get; set; }
+  public class GetEmployeeByIdQuery : Query<GetEmployeeByIdQueryResponse>
+  {
+    public Guid Id { get; set; }
 
-        public GetEmployeeByIdQuery(Guid id) => Id = id;
-    }
+    public GetEmployeeByIdQuery(Guid id) => Id = id;
+  }
 }

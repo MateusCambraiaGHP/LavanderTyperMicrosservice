@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using LavanderTyperWeb.Application.Dtos.Equipaments;
-using LavanderTyperWeb.Application.Features.ViewModel.Equipaments;
 using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
+using LTW.Resources.Application.Dtos.Equipaments;
+using LTW.Resources.Application.Features.ViewModel.Equipaments;
 
-namespace LavanderTyperWeb.Application.Cummon.Extensions.MappingProfiles
+namespace LTW.Resources.Application.Cummon.Extensions.MappingProfiles
 {
-    public class EquipamentMappingProfile : Profile
+  public class EquipamentMappingProfile : Profile
+  {
+    public EquipamentMappingProfile()
     {
-        public EquipamentMappingProfile()
-        {
-            CreateMap<Equipament, EquipamentViewModel>().ReverseMap();
-            CreateMap<Equipament, UpdateEquipamentDto>().ReverseMap();
-        }
+      CreateMap<Equipament, EquipamentViewModel>().ReverseMap();
+      CreateMap<Equipament, UpdateEquipamentDto>().ReverseMap();
     }
+  }
 }

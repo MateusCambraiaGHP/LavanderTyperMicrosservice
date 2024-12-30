@@ -1,4 +1,4 @@
-﻿namespace LTW.Payment.Domain
+﻿namespace LTW.Payment.Application
 {
   public class Class1
   {

@@ -2,31 +2,31 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LavanderTyperWeb.Data.Mappings
+namespace LTW.Organization.Infrastructure.Mappings
 {
-    public class BranchMap : IEntityTypeConfiguration<Branch>
+  public class BranchMap : IEntityTypeConfiguration<Branch>
+  {
+    public void Configure(EntityTypeBuilder<Branch> entity)
     {
-        public void Configure(EntityTypeBuilder<Branch> entity)
-        {
-            entity.ToTable("Branch");
+      entity.ToTable("Branch");
 
-            entity.HasKey(e => e.Id);
+      entity.HasKey(e => e.Id);
 
-            entity.Property(e => e.InsertionDate)
-                .HasColumnType("datetime");
+      entity.Property(e => e.InsertionDate)
+          .HasColumnType("datetime");
 
-            entity.Property(e => e.Name)
-                .HasMaxLength(50);
+      entity.Property(e => e.Name)
+          .HasMaxLength(50);
 
-            entity.Property(e => e.Address)
-                .HasMaxLength(70);
+      entity.Property(e => e.Address)
+          .HasMaxLength(70);
 
-            entity.HasOne(b => b.Company)
-                .WithMany(c => c.Branches)
-                .HasForeignKey(b => b.IdCompany);
+      entity.HasOne(b => b.Company)
+          .WithMany(c => c.Branches)
+          .HasForeignKey(b => b.IdCompany);
 
-            entity.Property(e => e.LastModification)
-                .HasColumnType("datetime");
-        }
+      entity.Property(e => e.LastModification)
+          .HasColumnType("datetime");
     }
+  }
 }

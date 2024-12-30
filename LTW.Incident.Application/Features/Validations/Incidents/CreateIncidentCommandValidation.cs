@@ -1,14 +1,14 @@
 ﻿using FluentValidation;
-using LavanderTyperWeb.Application.Features.Commands.Incidents;
+using LTW.Incident.Application.Features.Commands.Incidents;
 
-namespace LavanderTyperWeb.Application.Features.Validations.Incidents
+namespace LTW.Incident.Application.Features.Validations.Incidents
 {
-    public class CreateIncidentCommandValidation : AbstractValidator<CreateIncidentCommand>
+  public class CreateIncidentCommandValidation : AbstractValidator<CreateIncidentCommand>
+  {
+    public CreateIncidentCommandValidation()
     {
-        public CreateIncidentCommandValidation()
-        {
-            RuleFor(c => c.Request.Description)
-                .NotEmpty().WithMessage("The Description cannot be empty");
-        }
+      RuleFor(c => c.Request.Description)
+          .NotEmpty().WithMessage("The Description cannot be empty");
     }
+  }
 }

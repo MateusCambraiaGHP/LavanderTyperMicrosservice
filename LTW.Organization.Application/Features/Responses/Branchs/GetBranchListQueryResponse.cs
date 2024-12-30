@@ -1,19 +1,19 @@
-﻿using LavanderTyperWeb.Application.Features.ViewModel.Branchs;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Organization.Application.Features.ViewModel.Branchs;
 
-namespace LavanderTyperWeb.Application.Features.Responses.Branchs
+namespace LTW.Organization.Application.Features.Responses.Branchs
 {
-    public class GetBranchListQueryResponse : BaseHandlerResponse
-    {
-        public List<BranchViewModel> Response { get; set; } = new();
+  public class GetBranchListQueryResponse : BaseHandlerResponse
+  {
+    public List<BranchViewModel> Response { get; set; } = new();
 
-        public GetBranchListQueryResponse()
-            : base() { }
+    public GetBranchListQueryResponse()
+        : base() { }
 
-        public GetBranchListQueryResponse(List<BranchViewModel> response)
-            : base() => Response = response;
+    public GetBranchListQueryResponse(List<BranchViewModel> response)
+        : base() => Response = response;
 
-        public GetBranchListQueryResponse(bool success, string message)
-            : base(success, message) { }
-    }
+    public GetBranchListQueryResponse(bool success, string message)
+        : base(success, message) { }
+  }
 }

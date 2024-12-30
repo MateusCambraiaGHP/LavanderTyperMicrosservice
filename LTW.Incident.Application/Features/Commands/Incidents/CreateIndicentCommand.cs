@@ -1,13 +1,13 @@
-﻿using LavanderTyperWeb.Application.Dtos.Incidents;
-using LavanderTyperWeb.Application.Features.Responses.Incidents;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Incident.Application.Dtos.Incidents;
+using LTW.Incident.Application.Features.Responses.Incidents;
 
-namespace LavanderTyperWeb.Application.Features.Commands.Incidents
+namespace LTW.Incident.Application.Features.Commands.Incidents
 {
-    public class CreateIncidentCommand : Command<CreateIncidentCommandResponse>
-    {
-        public CreateIncidentDto Request { get; init; }
+  public class CreateIncidentCommand : Command<CreateIncidentCommandResponse>
+  {
+    public CreateIncidentDto Request { get; init; }
 
-        public CreateIncidentCommand(CreateIncidentDto request) => Request = request;
-    }
+    public CreateIncidentCommand(CreateIncidentDto request) => Request = request;
+  }
 }

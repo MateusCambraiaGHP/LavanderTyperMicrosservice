@@ -1,12 +1,12 @@
-﻿using LavanderTyperWeb.Application.Features.Responses.Incidents;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Incident.Application.Features.Responses.Incidents;
 
-namespace LavanderTyperWeb.Application.Features.Queries.Incidents
+namespace LTW.Incident.Application.Features.Queries.Incidents
 {
-    public class GetIncidentByIdQuery : Query<GetIncidentByIdQueryResponse>
-    {
-        public Guid Id { get; set; }
+  public class GetIncidentByIdQuery : Query<GetIncidentByIdQueryResponse>
+  {
+    public Guid Id { get; set; }
 
-        public GetIncidentByIdQuery(Guid id) => Id = id;
-    }
+    public GetIncidentByIdQuery(Guid id) => Id = id;
+  }
 }

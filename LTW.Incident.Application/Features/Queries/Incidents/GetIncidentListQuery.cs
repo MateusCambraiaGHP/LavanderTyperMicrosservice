@@ -1,10 +1,10 @@
-﻿using LavanderTyperWeb.Application.Features.Responses.Incidents;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+using LTW.Incident.Application.Features.Responses.Incidents;
 
-namespace LavanderTyperWeb.Application.Features.Queries.Incidents
+namespace LTW.Incident.Application.Features.Queries.Incidents
 {
-    public class GetIncidentListQuery : Query<GetIncidentListQueryResponse>
-    {
-        public GetIncidentListQuery() { }
-    }
+  public class GetIncidentListQuery : Query<GetIncidentListQueryResponse>
+  {
+    public GetIncidentListQuery() { }
+  }
 }

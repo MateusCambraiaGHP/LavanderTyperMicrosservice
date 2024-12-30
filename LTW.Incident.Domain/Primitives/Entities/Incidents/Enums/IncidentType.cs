@@ -1,10 +1,10 @@
-﻿namespace LavanderTyperWeb.Domain.Primitives.Entities.Incidents.Enums
+﻿namespace LTW.Incident.Domain.Primitives.Entities.Incidents.Enums
 {
-    public enum IncidentType
-    {
-        Default = 0,
-        Absence = 1,
-        VehicleIssue = 2,
-        CoworkersConflict = 3
-    }
+  public enum IncidentType
+  {
+    Default = 0,
+    Absence = 1,
+    VehicleIssue = 2,
+    CoworkersConflict = 3
+  }
 }

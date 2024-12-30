@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
-using LavanderTyperWeb.Application.Dtos.Branchs;
-using LavanderTyperWeb.Application.Features.ViewModel.Branchs;
 using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
+using LTW.Organization.Application.Dtos.Branchs;
+using LTW.Organization.Application.Features.ViewModel.Branchs;
 
-namespace LavanderTyperWeb.Application.Cummon.Extensions.MappingProfiles
+namespace LTW.Organization.Application.Cummon.Extensions.MappingProfiles
 {
-    public class BranchMappingProfile : Profile
+  public class BranchMappingProfile : Profile
+  {
+    public BranchMappingProfile()
     {
-        public BranchMappingProfile()
-        {
-            CreateMap<Branch, BranchViewModel>().ReverseMap();
-            CreateMap<Branch, UpdateBranchDto>().ReverseMap();
-        }
+      CreateMap<Branch, BranchViewModel>().ReverseMap();
+      CreateMap<Branch, UpdateBranchDto>().ReverseMap();
     }
+  }
 }
