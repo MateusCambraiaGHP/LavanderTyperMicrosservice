@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LTW.Payment.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab800c6906b92bc881da4c19c2ca6b19d8adf74e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dafa12c1dbe7be6cfc9e14d63a84515bb3253e3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("LTW.Payment.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LTW.Payment.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
