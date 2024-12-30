@@ -35,12 +35,24 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7C5F2947-8B07-47CE-88E7-7DAD8CDDDBF7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Organization", "Organization", "{15D4471E-E901-4EDD-B88F-F716AB5C7D57}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Incident", "Incident", "{DDCA5C5E-0FE7-48AD-91A7-E927404403C6}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{097A008F-008E-49F5-A14B-F7C7784688C1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payment", "Payment", "{E8481195-A777-4E3C-9A04-FDFD0D54B059}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LTW.Organization.API", "..\LTW.Organization.API\LTW.Organization.API.csproj", "{BE83FB87-393B-4E7F-B283-B5BAFF3948F7}"
 EndProject
