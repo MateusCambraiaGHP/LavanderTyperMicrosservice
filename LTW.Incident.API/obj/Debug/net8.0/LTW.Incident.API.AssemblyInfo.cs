@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LTW.Incident.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fd44bd0092e7de993ab538fe703de890fa512cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("LTW.Incident.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LTW.Incident.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
