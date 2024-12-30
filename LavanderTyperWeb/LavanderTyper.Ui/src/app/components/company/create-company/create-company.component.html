@@ -1,0 +1,15 @@
+
+
+<app-form
+	[formGroup]="form"
+	[rows]="rows"
+	[submit]="submitForm"
+	[title]="title"
+	[fillObject]="company"
+    [isErro]="isErro"
+    >
+    <!-- [backendErrors]="backendErrors" -->
+	<button *ngIf="!readonly" actions class="btn btn-primary btn-block mx-auto w-50 mt-5" style="margin-left: 23% !important;">
+		Salvar
+	</button>
+</app-form>

@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  db:
+    image: mysql
+    container_name: mysql_db_container
+    environment:
+      TZ: UTC
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: lavander-typer-web
+      MYSQL_PASSWORD: root123
+    ports:
+      - 1433:3306
+  lavandertyperweb:
+    image: ${DOCKER_REGISTRY-}lavandertyperweb
+    container_name: lavander_typer_web_container
+    build:
+      context: .
+      dockerfile: LavanderTyper\Dockerfile
+    environment:
+      TZ: UTC
+      ASPNETCORE_ENVIRONMENT: Production
+    ports:
+      - 44300:80
+    depends_on:
+      - db
+  redis:
+    image: redis:latest
+    container_name: redis_db_container
+    ports:
+      - 6379:6379

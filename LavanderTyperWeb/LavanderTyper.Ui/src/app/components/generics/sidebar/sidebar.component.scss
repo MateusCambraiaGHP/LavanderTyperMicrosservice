@@ -1,0 +1,149 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .wrapper {
+    display: flex;
+    width: 100%;
+  }
+  
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #343a40;
+    color: #fff;
+    transition: all 0.3s;
+    position: fixed;
+    height: 100vh;
+    z-index: 1000;
+    margin-left: 0;
+    transition: margin-left 0.3s;
+    background-color: #007bff;
+  
+    &.active {
+      margin-left: -250px;
+  
+      .custom-menu {
+        margin-left: 220px;
+        transition: margin-left 0.3s;
+      }
+    }
+  
+    h1 {
+      color: #fff;
+      font-size: 24px;
+  
+      a {
+        color: #fff;
+        text-decoration: none;
+  
+        span {
+          display: block;
+          font-size: 16px;
+        }
+      }
+    }
+  
+    .list-unstyled {
+      padding: 0;
+  
+      li {
+        a {
+          color: #fff;
+          padding: 10px;
+          display: block;
+          text-decoration: none;
+  
+          &:hover {
+            background: #0056b3;
+          }
+  
+          &.active {
+            background: #007bff;
+          }
+        }
+      }
+    }
+  }
+  
+  #sidebarCollapse {
+    border: none;
+    background: #007bff;
+    width: 55px;
+    height: 60px;
+  
+    .fa {
+      font-size: 18px;
+    }
+  
+    span {
+      display: none;
+    }
+  
+    &:hover {
+      background: #007bff;
+    }
+  
+    &:focus {
+      outline: none; /* Remover o contorno do botão quando focado */
+      box-shadow: none; /* Remover sombra do botão quando focado */
+    }
+  
+    .sr-only {
+      display: none;
+  
+      &:hover {
+        display: block;
+      }
+    }
+  }
+  
+  .subscribe-form {
+    .form-control {
+      border: none;
+      border-radius: 0;
+      padding: 10px;
+    }
+  
+    .form-group {
+      position: relative;
+  
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+  
+  .footer {
+    margin-top: auto;
+  
+    p {
+      color: #fff;
+      text-align: center;
+    }
+  }
+  
+  .custom-menu {
+    position: fixed;
+    top: 46px;
+    margin-left: 219px;
+    transition: all 0.3s;
+    transform: rotate(42deg);
+
+    #icon-sidebar {
+      transform: rotate(-42deg);
+      margin-left: 17px;
+      margin-bottom: 24px;
+    }
+  }
+  
+  .list-of-options{
+    padding-top: 31px !important;
+}
+
+.clickable-item {
+  cursor: pointer; 
+}

@@ -1,0 +1,9 @@
+#sidebar {
+    margin-left: 250px;
+    transition: margin-left 0.3s;
+  }
+  
+  #sidebar.active {
+    margin-left: 0;
+  }
+  

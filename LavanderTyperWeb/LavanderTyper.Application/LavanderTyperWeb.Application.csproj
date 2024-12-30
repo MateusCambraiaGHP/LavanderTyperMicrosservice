@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LavanderTyper.Core\LavanderTyperWeb.Core.csproj" />
+    <ProjectReference Include="..\LavanderTyper.Data\LavanderTyperWeb.Data.csproj" />
+    <ProjectReference Include="..\LavanderTyper.Domain\LavanderTyperWeb.Domain.csproj" />
+    <ProjectReference Include="..\LavanderTyper.Infrastructure\LavanderTyperWeb.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\EventHandlers\" />
+    <Folder Include="Features\Events\" />
+  </ItemGroup>
+
+</Project>
