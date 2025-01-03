@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Application.Features.Validations.Companies;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Domain.Primitives.Entities.Companies;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Data;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Organization.Application.Features.Commands.Companies;
 using LTW.Organization.Application.Features.Responses.Companies;
+using LTW.Organization.Application.Features.Validations.Companies;
 using LTW.Organization.Application.Features.ViewModel.Companies;
+using LTW.Organization.Domain.Primitives.Common.Interfaces.Repositories;
+using LTW.Organization.Domain.Primitives.Entities.Companies;
 
 namespace LTW.Organization.Application.Features.CommandHandlers.Companies
 {
@@ -16,28 +15,25 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Companies
   {
     private readonly ICompanyRepository _companyRepository;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly ILoggerService _loggerService;
 
     public CreateCompanyHandler(
         ICompanyRepository companyRepository,
         IMapper mapper,
-        IUnitOfWork unitOfWork,
-        ILoggerService loggerService)
+        IUnitOfWork unitOfWork)
         : base(mapper)
     {
       _companyRepository = companyRepository;
       _unitOfWork = unitOfWork;
-      _loggerService = loggerService;
     }
 
     public override async Task<CreateCompanyCommandResponse> Handle(CreateCompanyCommand request, CancellationToken cancellationToken)
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(CreateCompanyHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(CreateCompanyHandler));
         request.ValidationResult = Validate(request);
 
         if (!request.IsValid())
@@ -54,11 +50,11 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Companies
         var companyViewModel = _mapper.Map<CompanyViewModel>(company);
         var response = new CreateCompanyCommandResponse(companyViewModel);
 
-        await _loggerService.LogInfoAsync(
-         null,
-         "End Handle Request",
-         nameof(CreateCompanyHandler),
-         response);
+        //await _loggerService.LogInfoAsync(
+        // null,
+        // "End Handle Request",
+        // nameof(CreateCompanyHandler),
+        // response);
 
         return response;
       }

@@ -1,5 +1,4 @@
-﻿using LavanderTyperWeb.Core.DomainObjects;
-using LTW.Resources.Domain.Primitives.Common.ValueObjects;
+﻿using LTW.Resources.Domain.Primitives.Common.ValueObjects;
 
 namespace LTW.Resources.Domain.Primitives.Entities.Vehicles.ValueObjects
 {

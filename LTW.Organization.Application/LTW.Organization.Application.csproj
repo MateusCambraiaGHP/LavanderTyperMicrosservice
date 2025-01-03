@@ -11,4 +11,13 @@
     <Folder Include="Features\Events\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LTW.Core\LTW.Core.csproj" />
+    <ProjectReference Include="..\LTW.Organization.Domain\LTW.Organization.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

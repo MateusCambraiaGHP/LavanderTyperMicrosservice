@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LTW.Organization.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abcfa82007b3f0375b52894ee58481dba9165049")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af1a229df439fed5decca2e4cd3feeb6e63b6091")]
 [assembly: System.Reflection.AssemblyProductAttribute("LTW.Organization.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LTW.Organization.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

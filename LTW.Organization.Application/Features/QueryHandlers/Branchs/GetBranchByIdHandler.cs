@@ -1,26 +1,22 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Organization.Application.Features.Queries.Branchs;
 using LTW.Organization.Application.Features.Responses.Branchs;
 using LTW.Organization.Application.Features.ViewModel.Branchs;
+using LTW.Organization.Domain.Primitives.Common.Interfaces.Repositories;
 
 namespace LTW.Organization.Application.Features.QueryHandlers.Branchs
 {
   public class GetBranchByIdHandler : Handler<GetBranchByIdQuery, GetBranchByIdQueryResponse>
   {
     private readonly IBranchRepository _branchRepository;
-    private readonly ILoggerService _loggerService;
 
     public GetBranchByIdHandler(
         IMapper mapper,
-        ILoggerService loggerService,
         IBranchRepository branchRepository)
         : base(mapper)
     {
-      _loggerService = loggerService;
       _branchRepository = branchRepository;
     }
 
@@ -28,20 +24,20 @@ namespace LTW.Organization.Application.Features.QueryHandlers.Branchs
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(GetBranchByIdHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(GetBranchByIdHandler));
 
         var currentBranch = await _branchRepository.GetAsync(ep => ep.Id == request.Id, null, null);
         var branchMap = _mapper.Map<BranchViewModel>(currentBranch.FirstOrDefault());
 
         var response = new GetBranchByIdQueryResponse(branchMap);
-        await _loggerService.LogInfoAsync(
-            null,
-            "End Handle Request",
-            nameof(GetBranchByIdHandler),
-            response);
+        //await _loggerService.LogInfoAsync(
+        //    null,
+        //    "End Handle Request",
+        //    nameof(GetBranchByIdHandler),
+        //    response);
 
         return response;
       }

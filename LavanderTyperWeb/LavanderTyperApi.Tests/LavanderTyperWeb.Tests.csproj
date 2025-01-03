@@ -28,8 +28,4 @@
     <Folder Include="Infrastructure\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\LavanderTyper.Domain\LavanderTyperWeb.Domain.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,5 +1,5 @@
-﻿using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
+﻿using LTW.Resources.Domain.Primitives.Common.Interfaces.Repositories;
+using LTW.Resources.Domain.Primitives.Entities.Equipaments;
 using LTW.Resources.Infrastructure.Common.Interfaces;
 
 namespace LTW.Resources.Infrastructure.Repositories

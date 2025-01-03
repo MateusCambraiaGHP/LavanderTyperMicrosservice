@@ -1,13 +1,10 @@
-﻿using LavanderTyperWeb.Core.Communication.Mediator.Interfaces;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.DomainObjects;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
-using LavanderTyperWeb.Domain.Primitives.Entities.Companies;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
-using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
-using LavanderTyperWeb.Domain.Primitives.Entities.Incidents;
-using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles;
+﻿using LTW.Core.Communication.Mediator.Interfaces;
+using LTW.Core.Data;
+using LTW.Core.DomainObjects;
+using LTW.Core.Messages.CommonMessages;
+using LTW.Resources.Domain.Primitives.Entities.Equipaments;
+using LTW.Resources.Domain.Primitives.Entities.Vehicles;
+using LTW.Resources.Domain.Primitives.Entities.Vehicles.Enums;
 using LTW.Resources.Infrastructure.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -36,12 +33,7 @@ namespace LTW.Resources.Infrastructure.Data
       modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationMySqlDbContext).Assembly);
       base.OnModelCreating(modelBuilder);
     }
-
-    public DbSet<Employee> Employee { get; set; }
-    public DbSet<Branch> Branch { get; set; }
-    public DbSet<Company> Company { get; set; }
     public DbSet<Equipament> Equipament { get; set; }
-    public DbSet<Incident> Incident { get; set; }
     public DbSet<Vehicle> Vehicle { get; set; }
     public override DatabaseFacade Database => base.Database;
 
@@ -99,9 +91,9 @@ namespace LTW.Resources.Infrastructure.Data
 
     public void SeedData()
     {
-      if (!Company.Any())
+      if (!Vehicle.Any())
       {
-        Company.Add(new Company("Tidy Team", "Lisbon, PT", "999999999", new()));
+        Vehicle.Add(new Vehicle(Guid.NewGuid(), "a", "a", "a", VehicleCondition.Damaged, 1000, new()));
         Task.FromResult(Save());
       }
     }

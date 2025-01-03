@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Application.Features.Validations.Branchs;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Data;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Organization.Application.Features.Commands.Branchs;
 using LTW.Organization.Application.Features.Responses.Branchs;
+using LTW.Organization.Application.Features.Validations.Branchs;
 using LTW.Organization.Application.Features.ViewModel.Branchs;
+using LTW.Organization.Domain.Primitives.Common.Interfaces.Repositories;
+using LTW.Organization.Domain.Primitives.Entities.Branchs;
 
 namespace LTW.Organization.Application.Features.CommandHandlers.Branchs
 {
@@ -16,20 +15,17 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Branchs
   {
     private readonly IBranchRepository _branchRepository;
     private readonly ICompanyRepository _companyRepository;
-    private readonly ILoggerService _loggerService;
     private readonly IUnitOfWork _unitOfWork;
 
     public UpdateBranchHandler(
         IBranchRepository branchRepository,
         IUnitOfWork unitOfWork,
         IMapper mapper,
-        ILoggerService loggerService,
         ICompanyRepository companyRepository)
         : base(mapper)
     {
       _branchRepository = branchRepository;
       _unitOfWork = unitOfWork;
-      _loggerService = loggerService;
       _companyRepository = companyRepository;
     }
 
@@ -37,9 +33,9 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Branchs
     {
       try
       {
-        await _loggerService.LogInfoAsync(request,
-            "Start Handle Request",
-            nameof(UpdateBranchHandler));
+        //await _loggerService.LogInfoAsync(request,
+        //    "Start Handle Request",
+        //    nameof(UpdateBranchHandler));
         request.ValidationResult = Validate(request);
 
         if (!request.IsValid())
@@ -51,10 +47,10 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Branchs
         var branchViewModel = _mapper.Map<BranchViewModel>(branchMap);
 
         var response = new UpdateBranchCommandResponse(branchViewModel);
-        await _loggerService.LogInfoAsync(null,
-            "End Handle Request",
-            nameof(UpdateBranchHandler),
-            response);
+        //await _loggerService.LogInfoAsync(null,
+        //    "End Handle Request",
+        //    nameof(UpdateBranchHandler),
+        //    response);
 
         return response;
       }

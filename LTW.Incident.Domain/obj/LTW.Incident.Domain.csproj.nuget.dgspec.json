@@ -4,21 +4,21 @@
     "C:\\WorkDir\\LavanderTyperMicrosservice\\LTW.Incident.Domain\\LTW.Incident.Domain.csproj": {}
   },
   "projects": {
-    "C:\\WorkDir\\LavanderTyperMicrosservice\\LavanderTyperWeb\\LavanderTyper.Core\\LavanderTyperWeb.Core.csproj": {
+    "C:\\WorkDir\\LavanderTyperMicrosservice\\LTW.Core\\LTW.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\WorkDir\\LavanderTyperMicrosservice\\LavanderTyperWeb\\LavanderTyper.Core\\LavanderTyperWeb.Core.csproj",
-        "projectName": "LavanderTyperWeb.Core",
-        "projectPath": "C:\\WorkDir\\LavanderTyperMicrosservice\\LavanderTyperWeb\\LavanderTyper.Core\\LavanderTyperWeb.Core.csproj",
+        "projectUniqueName": "C:\\WorkDir\\LavanderTyperMicrosservice\\LTW.Core\\LTW.Core.csproj",
+        "projectName": "LTW.Core",
+        "projectPath": "C:\\WorkDir\\LavanderTyperMicrosservice\\LTW.Core\\LTW.Core.csproj",
         "packagesPath": "C:\\Users\\mateu\\.nuget\\packages\\",
-        "outputPath": "C:\\WorkDir\\LavanderTyperMicrosservice\\LavanderTyperWeb\\LavanderTyper.Core\\obj\\",
+        "outputPath": "C:\\WorkDir\\LavanderTyperMicrosservice\\LTW.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mateu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -26,8 +26,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -43,8 +43,8 @@
         }
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -57,14 +57,6 @@
             "MediatR": {
               "target": "Package",
               "version": "[12.2.0, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.19, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[13.0.1, )"
             }
           },
           "imports": [
@@ -83,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -112,8 +104,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\WorkDir\\LavanderTyperMicrosservice\\LavanderTyperWeb\\LavanderTyper.Core\\LavanderTyperWeb.Core.csproj": {
-                "projectPath": "C:\\WorkDir\\LavanderTyperMicrosservice\\LavanderTyperWeb\\LavanderTyper.Core\\LavanderTyperWeb.Core.csproj"
+              "C:\\WorkDir\\LavanderTyperMicrosservice\\LTW.Core\\LTW.Core.csproj": {
+                "projectPath": "C:\\WorkDir\\LavanderTyperMicrosservice\\LTW.Core\\LTW.Core.csproj"
               }
             }
           }

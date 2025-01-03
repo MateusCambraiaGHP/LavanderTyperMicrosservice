@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Domain.Primitives.Entities.Companies;
+﻿using LTW.Organization.Domain.Primitives.Entities.Companies;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

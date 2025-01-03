@@ -1,6 +1,5 @@
-﻿using LavanderTyperWeb.Core.DomainObjects;
-using LavanderTyperWeb.Data.Data;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
+﻿using LTW.Core.DomainObjects;
+using LTW.Organization.Domain.Primitives.Entities.Employees;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 

@@ -1,12 +1,12 @@
-﻿using LavanderTyperWeb.Domain.Primitives.Entities.Incidents;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using IncidentEntity = LTW.Incident.Domain.Primitives.Entities.Incidents.Incident;
 
 namespace LTW.Incident.Infrastructure.Mappings
 {
-  public class IncidentMap : IEntityTypeConfiguration<Incident>
+  public class IncidentMap : IEntityTypeConfiguration<IncidentEntity>
   {
-    public void Configure(EntityTypeBuilder<Incident> entity)
+    public void Configure(EntityTypeBuilder<IncidentEntity> entity)
     {
       entity.ToTable("Incident");
 
@@ -23,18 +23,6 @@ namespace LTW.Incident.Infrastructure.Mappings
 
       entity.Property(i => i.IncidentType)
           .HasConversion<int>();
-
-      entity.HasOne(i => i.Employee)
-          .WithMany()
-          .HasForeignKey(i => i.IdEmployee);
-
-      entity.HasOne(i => i.Branch)
-          .WithMany()
-          .HasForeignKey(i => i.IdBranch);
-
-      entity.HasOne(i => i.Equipament)
-          .WithMany()
-          .HasForeignKey(i => i.IdEquipament);
 
       entity.Property(e => e.LastModification)
           .HasColumnType("datetime");

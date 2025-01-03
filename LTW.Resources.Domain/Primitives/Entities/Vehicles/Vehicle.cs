@@ -1,6 +1,4 @@
-﻿using LavanderTyperWeb.Core.DomainObjects;
-using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
+﻿using LTW.Core.DomainObjects;
 using LTW.Resources.Domain.Primitives.Entities.Vehicles.Enums;
 using LTW.Resources.Domain.Primitives.Entities.Vehicles.ValueObjects;
 
@@ -15,8 +13,6 @@ namespace LTW.Resources.Domain.Primitives.Entities.Vehicles
     public VehicleCondition? VehicleCondition { get; set; }
     public double? Price { get; set; }
     public List<Gas> Gas { get; set; } = new();
-    public List<Employee> Employees { get; set; } = new();
-    public Branch Branch { get; set; } = new();
 
     private Vehicle() { }
 
@@ -27,9 +23,7 @@ namespace LTW.Resources.Domain.Primitives.Entities.Vehicles
         string licensePlate,
         VehicleCondition? vehicleCondition,
         double? price,
-        List<Gas> gas,
-        List<Employee> employees,
-        Branch branch)
+        List<Gas> gas)
     {
       IdBranch = idBranch;
       Name = name;
@@ -38,8 +32,6 @@ namespace LTW.Resources.Domain.Primitives.Entities.Vehicles
       VehicleCondition = vehicleCondition;
       Price = price;
       Gas = gas;
-      Employees = employees;
-      Branch = branch;
     }
   }
 }

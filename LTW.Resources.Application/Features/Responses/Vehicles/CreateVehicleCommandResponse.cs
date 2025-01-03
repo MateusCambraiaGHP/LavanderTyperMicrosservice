@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LTW.Core.Messages.CommonMessages;
 using LTW.Resources.Application.Features.ViewModel.Vehicles;
 
 namespace LTW.Resources.Application.Features.Responses.Vehicles

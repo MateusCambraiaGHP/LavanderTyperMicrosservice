@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.Data;
+﻿using LTW.Core.Data;
 using LTW.Organization.Infrastructure.Common.Interfaces;
 
 namespace LTW.Organization.Infrastructure.Transaction

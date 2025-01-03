@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Application.Features.ViewModel.Commom;
+﻿using LTW.Organization.Application.Features.ViewModel.Commom;
 using System.Text.Json.Serialization;
 
 namespace LTW.Resources.Application.Features.ViewModel.Vehicles

@@ -15,4 +15,9 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LTW.Core\LTW.Core.csproj" />
+    <ProjectReference Include="..\LTW.Incident.Domain\LTW.Incident.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

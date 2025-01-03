@@ -1,17 +1,13 @@
-﻿using LavanderTyperWeb.Core.Communication.Mediator.Interfaces;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.DomainObjects;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
-using LavanderTyperWeb.Domain.Primitives.Entities.Companies;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
-using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
-using LavanderTyperWeb.Domain.Primitives.Entities.Incidents;
-using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles;
+﻿using LTW.Core.Communication.Mediator.Interfaces;
+using LTW.Core.Data;
+using LTW.Core.DomainObjects;
+using LTW.Core.Messages.CommonMessages;
+using LTW.Incident.Domain.Primitives.Entities.Incidents.Enums;
 using LTW.Incident.Infrastructure.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
+using IncidentEntity = LTW.Incident.Domain.Primitives.Entities.Incidents.Incident;
 
 namespace LTW.Incident.Infrastructure.Data
 {
@@ -36,13 +32,7 @@ namespace LTW.Incident.Infrastructure.Data
       modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationMySqlDbContext).Assembly);
       base.OnModelCreating(modelBuilder);
     }
-
-    public DbSet<Employee> Employee { get; set; }
-    public DbSet<Branch> Branch { get; set; }
-    public DbSet<Company> Company { get; set; }
-    public DbSet<Equipament> Equipament { get; set; }
-    public DbSet<Incident> Incident { get; set; }
-    public DbSet<Vehicle> Vehicle { get; set; }
+    public DbSet<IncidentEntity> Incident { get; set; }
     public override DatabaseFacade Database => base.Database;
 
     public async Task<int> Save()
@@ -99,9 +89,9 @@ namespace LTW.Incident.Infrastructure.Data
 
     public void SeedData()
     {
-      if (!Company.Any())
+      if (!Incident.Any())
       {
-        Company.Add(new Company("Tidy Team", "Lisbon, PT", "999999999", new()));
+        Incident.Add(new IncidentEntity(Guid.NewGuid(), Guid.NewGuid(), Guid.NewGuid(), DateOnly.MinValue, "", IncidentType.CoworkersConflict));
         Task.FromResult(Save());
       }
     }

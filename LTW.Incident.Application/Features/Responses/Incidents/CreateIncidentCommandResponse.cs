@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LTW.Core.Messages.CommonMessages;
 using LTW.Incident.Application.Features.ViewModel.Incidents;
 
 namespace LTW.Incident.Application.Features.Responses.Incidents

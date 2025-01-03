@@ -1,26 +1,22 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Resources.Application.Features.Queries.Equipaments;
 using LTW.Resources.Application.Features.Responses.Equipaments;
 using LTW.Resources.Application.Features.ViewModel.Equipaments;
+using LTW.Resources.Domain.Primitives.Common.Interfaces.Repositories;
 
 namespace LTW.Resources.Application.Features.QueryHandlers.Equipaments
 {
   public class GetEquipamentListHandler : Handler<GetEquipamentListQuery, GetEquipamentListQueryResponse>
   {
     private readonly IEquipamentRepository _equipamentRepository;
-    private readonly ILoggerService _loggerService;
 
     public GetEquipamentListHandler(
         IMapper mapper,
-        ILoggerService loggerService,
         IEquipamentRepository equipamentRepository)
         : base(mapper)
     {
-      _loggerService = loggerService;
       _equipamentRepository = equipamentRepository;
     }
 
@@ -28,20 +24,20 @@ namespace LTW.Resources.Application.Features.QueryHandlers.Equipaments
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(GetEquipamentListHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(GetEquipamentListHandler));
 
         var equipamentList = await _equipamentRepository.GetAsync(null, null, null);
         var equipamentListMap = _mapper.Map<List<EquipamentViewModel>>(equipamentList);
 
         var response = new GetEquipamentListQueryResponse(equipamentListMap);
-        await _loggerService.LogInfoAsync(
-            null,
-            "End Handle Request",
-            nameof(GetEquipamentListHandler),
-            response);
+        //await _loggerService.LogInfoAsync(
+        //    null,
+        //    "End Handle Request",
+        //    nameof(GetEquipamentListHandler),
+        //    response);
 
         return response;
       }

@@ -1,6 +1,4 @@
-﻿using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles;
-using LTW.Organization.Domain.Primitives;
-using LTW.Organization.Domain.Primitives.Entities.Branchs;
+﻿using LTW.Organization.Domain.Primitives.Entities.Branchs;
 
 namespace LTW.Organization.Domain.Primitives.Entities.Employees
 {
@@ -15,7 +13,6 @@ namespace LTW.Organization.Domain.Primitives.Entities.Employees
     public string? LicenseNumber { get; set; }
     public double? SalaryPerHour { get; set; }
     public double? Salary { get; set; }
-    public List<Vehicle> Vehicles { get; set; } = new();
     public List<Branch> Branches { get; set; } = new();
 
     internal Employee() { }
@@ -30,7 +27,6 @@ namespace LTW.Organization.Domain.Primitives.Entities.Employees
         string? licenseNumber,
         double? salaryPerHour,
         double? salary,
-        List<Vehicle> vehicles,
         List<Branch> branches)
     {
       FirstName = firstName;
@@ -42,7 +38,6 @@ namespace LTW.Organization.Domain.Primitives.Entities.Employees
       LicenseNumber = licenseNumber;
       SalaryPerHour = salaryPerHour;
       Salary = salary;
-      Vehicles = vehicles;
       Branches = branches;
     }
   }

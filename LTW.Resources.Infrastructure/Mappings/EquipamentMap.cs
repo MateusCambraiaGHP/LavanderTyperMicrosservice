@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
+﻿using LTW.Resources.Domain.Primitives.Entities.Equipaments;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -25,10 +25,6 @@ namespace LTW.Resources.Infrastructure.Mappings
 
       entity.Property(e => e.Price)
           .HasPrecision(20, 4);
-
-      entity.HasOne(i => i.Branch)
-          .WithMany()
-          .HasForeignKey(i => i.IdBranch);
 
       entity.Property(e => e.LastModification)
           .HasColumnType("datetime");

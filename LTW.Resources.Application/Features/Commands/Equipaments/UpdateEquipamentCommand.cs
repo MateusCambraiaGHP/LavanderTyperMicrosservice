@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LTW.Core.Messages.CommonMessages;
 using LTW.Resources.Application.Dtos.Equipaments;
 using LTW.Resources.Application.Features.Responses.Equipaments;
 

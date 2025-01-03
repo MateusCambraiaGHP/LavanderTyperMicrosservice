@@ -1,13 +1,10 @@
-﻿using LavanderTyperWeb.Core.Communication.Mediator.Interfaces;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.DomainObjects;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
-using LavanderTyperWeb.Domain.Primitives.Entities.Companies;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
-using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
-using LavanderTyperWeb.Domain.Primitives.Entities.Incidents;
-using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles;
+﻿using LTW.Core.Communication.Mediator.Interfaces;
+using LTW.Core.Data;
+using LTW.Core.DomainObjects;
+using LTW.Core.Messages.CommonMessages;
+using LTW.Organization.Domain.Primitives.Entities.Branchs;
+using LTW.Organization.Domain.Primitives.Entities.Companies;
+using LTW.Organization.Domain.Primitives.Entities.Employees;
 using LTW.Organization.Infrastructure.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -40,9 +37,6 @@ namespace LTW.Organization.Infrastructure.Data
     public DbSet<Employee> Employee { get; set; }
     public DbSet<Branch> Branch { get; set; }
     public DbSet<Company> Company { get; set; }
-    public DbSet<Equipament> Equipament { get; set; }
-    public DbSet<Incident> Incident { get; set; }
-    public DbSet<Vehicle> Vehicle { get; set; }
     public override DatabaseFacade Database => base.Database;
 
     public async Task<int> Save()

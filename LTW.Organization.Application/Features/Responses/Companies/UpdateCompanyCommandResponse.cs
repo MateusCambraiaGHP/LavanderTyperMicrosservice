@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.Messages.CommonMessages;
+﻿using LTW.Core.Messages.CommonMessages;
 using LTW.Organization.Application.Features.ViewModel.Companies;
 
 namespace LTW.Organization.Application.Features.Responses.Companies

@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.DomainObjects;
+﻿using LTW.Core.DomainObjects;
 using LTW.Organization.Domain.Primitives.Entities.Branchs;
 
 namespace LTW.Organization.Domain.Primitives.Entities.Companies

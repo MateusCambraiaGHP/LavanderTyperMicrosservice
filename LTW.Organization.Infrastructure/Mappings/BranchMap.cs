@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
+﻿using LTW.Organization.Domain.Primitives.Entities.Branchs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

@@ -1,8 +1,8 @@
-﻿using System.Linq.Expressions;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.DomainObjects;
+﻿using LTW.Core.Data;
+using LTW.Core.DomainObjects;
 using LTW.Organization.Infrastructure.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace LTW.Organization.Infrastructure.Repositories
 {

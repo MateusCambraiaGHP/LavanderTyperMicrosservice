@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LavanderTyper.Core\LavanderTyperWeb.Core.csproj" />
+    <ProjectReference Include="..\..\LTW.Core\LTW.Core.csproj" />
     <ProjectReference Include="..\LavanderTyper.Data\LavanderTyperWeb.Data.csproj" />
     <ProjectReference Include="..\LavanderTyper.Domain\LavanderTyperWeb.Domain.csproj" />
     <ProjectReference Include="..\LavanderTyper.Infrastructure\LavanderTyperWeb.Infrastructure.csproj" />

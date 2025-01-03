@@ -1,6 +1,5 @@
-﻿using LavanderTyperWeb.Application.Dtos.Employee;
-using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles.Enums;
-using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles.ValueObjects;
+﻿using LTW.Resources.Domain.Primitives.Entities.Vehicles.Enums;
+using LTW.Resources.Domain.Primitives.Entities.Vehicles.ValueObjects;
 
 namespace LTW.Resources.Application.Dtos.Vehicles
 {

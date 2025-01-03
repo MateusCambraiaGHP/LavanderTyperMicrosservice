@@ -1,52 +1,44 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Application.Features.Validations.Vehicles;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Domain.Primitives.Entities.Vehicles;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Data;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Resources.Application.Features.Commands.Vehicles;
 using LTW.Resources.Application.Features.Responses.Vehicles;
+using LTW.Resources.Application.Features.Validations.Vehicles;
 using LTW.Resources.Application.Features.ViewModel.Vehicles;
+using LTW.Resources.Domain.Primitives.Common.Interfaces.Repositories;
+using LTW.Resources.Domain.Primitives.Entities.Vehicles;
 
 namespace LTW.Resources.Application.Features.CommandHandlers.Vehicles
 {
   public class CreateVehicleHandler : Handler<CreateVehicleCommand, CreateVehicleCommandResponse>
   {
     private readonly IVehicleRepository _vehicleRepository;
-    private readonly IBranchRepository _branchRepository;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly ILoggerService _loggerService;
 
     public CreateVehicleHandler(
         IVehicleRepository vehicleRepository,
         IMapper mapper,
-        IUnitOfWork unitOfWork,
-        ILoggerService loggerService,
-        IBranchRepository branchRepository)
+        IUnitOfWork unitOfWork)
         : base(mapper)
     {
       _vehicleRepository = vehicleRepository;
       _unitOfWork = unitOfWork;
-      _loggerService = loggerService;
-      _branchRepository = branchRepository;
     }
 
     public override async Task<CreateVehicleCommandResponse> Handle(CreateVehicleCommand request, CancellationToken cancellationToken)
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(CreateVehicleHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(CreateVehicleHandler));
         request.ValidationResult = Validate(request);
 
         if (!request.IsValid())
           return ResponseOnFailValidation("fail on create employee", request.ValidationResult);
 
-        var currentBranch = await _branchRepository.GetAsync(ep => ep.Id == request.Request.IdBranch, null, null);
         var vehicle = new Vehicle(
             request.Request.IdBranch,
             request.Request.Name,
@@ -54,20 +46,18 @@ namespace LTW.Resources.Application.Features.CommandHandlers.Vehicles
             request.Request.LicensePlate,
             request.Request.VehicleCondition,
             request.Request.Price,
-            request.Request.Gas,
-            new(),
-            currentBranch.First());
+            request.Request.Gas);
         await _vehicleRepository.Create(vehicle);
         await _unitOfWork.CommitChangesAsync();
 
         var vehicleViewModel = _mapper.Map<VehicleViewModel>(vehicle);
         var response = new CreateVehicleCommandResponse(vehicleViewModel);
 
-        await _loggerService.LogInfoAsync(
-         null,
-         "End Handle Request",
-         nameof(CreateVehicleHandler),
-         response);
+        //await _loggerService.LogInfoAsync(
+        // null,
+        // "End Handle Request",
+        // nameof(CreateVehicleHandler),
+        // response);
 
         return response;
       }

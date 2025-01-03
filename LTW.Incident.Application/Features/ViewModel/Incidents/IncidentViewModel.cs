@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Application.Features.ViewModel.Commom;
+﻿using LTW.Incident.Application.Features.ViewModel.Commom;
 using System.Text.Json.Serialization;
 
 namespace LTW.Incident.Application.Features.ViewModel.Incidents

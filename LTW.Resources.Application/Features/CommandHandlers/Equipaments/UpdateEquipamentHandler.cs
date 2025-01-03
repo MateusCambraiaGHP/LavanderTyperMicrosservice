@@ -1,35 +1,29 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Application.Features.Validations.Employees;
-using LavanderTyperWeb.Application.Features.Validations.Equipaments;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Data.Repositories;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
-using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
+using LTW.Core.Data;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Resources.Application.Features.Commands.Equipaments;
 using LTW.Resources.Application.Features.Responses.Equipaments;
+using LTW.Resources.Application.Features.Validations.Equipaments;
 using LTW.Resources.Application.Features.ViewModel.Equipaments;
+using LTW.Resources.Domain.Primitives.Common.Interfaces.Repositories;
+using LTW.Resources.Domain.Primitives.Entities.Equipaments;
 
 namespace LTW.Resources.Application.Features.CommandHandlers.Equipaments
 {
   public class UpdateEquipamentHandler : Handler<UpdateEquipamentCommand, UpdateEquipamentCommandResponse>
   {
     private readonly IEquipamentRepository _equipamentRepository;
-    private readonly IBranchRepository _branchRepository;
     private readonly IUnitOfWork _unitOfWork;
 
     public UpdateEquipamentHandler(
         IEquipamentRepository equipamentRepository,
         IUnitOfWork unitOfWork,
-        IMapper mapper,
-        IBranchRepository branchRepository)
+        IMapper mapper)
         : base(mapper)
     {
       _equipamentRepository = equipamentRepository;
       _unitOfWork = unitOfWork;
-      _branchRepository = branchRepository;
     }
 
     public override async Task<UpdateEquipamentCommandResponse> Handle(UpdateEquipamentCommand request, CancellationToken cancellationToken)

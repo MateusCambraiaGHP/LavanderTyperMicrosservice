@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using LavanderTyperWeb.Domain.Primitives.Entities.Equipaments;
 using LTW.Resources.Application.Dtos.Equipaments;
 using LTW.Resources.Application.Features.ViewModel.Equipaments;
+using LTW.Resources.Domain.Primitives.Entities.Equipaments;
 
 namespace LTW.Resources.Application.Cummon.Extensions.MappingProfiles
 {

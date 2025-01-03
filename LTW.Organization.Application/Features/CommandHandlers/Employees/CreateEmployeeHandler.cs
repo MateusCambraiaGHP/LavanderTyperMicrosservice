@@ -1,14 +1,13 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Application.Features.Validations.Employees;
-using LavanderTyperWeb.Core.Data;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Data;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Organization.Application.Features.Commands.Employee;
 using LTW.Organization.Application.Features.Responses.Employees;
+using LTW.Organization.Application.Features.Validations.Employees;
 using LTW.Organization.Application.Features.ViewModel.Employees;
+using LTW.Organization.Domain.Primitives.Common.Interfaces.Repositories;
+using LTW.Organization.Domain.Primitives.Entities.Employees;
 
 namespace LTW.Organization.Application.Features.CommandHandlers.Employees
 {
@@ -17,19 +16,16 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Employees
     private readonly IEmployeeRepository _employeeRepository;
     private readonly IBranchRepository _branchRepository;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly ILoggerService _loggerService;
 
     public CreateEmployeeHandler(
         IEmployeeRepository employeeRepository,
         IMapper mapper,
         IUnitOfWork unitOfWork,
-        ILoggerService loggerService,
         IBranchRepository branchRepository)
         : base(mapper)
     {
       _employeeRepository = employeeRepository;
       _unitOfWork = unitOfWork;
-      _loggerService = loggerService;
       _branchRepository = branchRepository;
     }
 
@@ -37,10 +33,10 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Employees
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(CreateEmployeeHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(CreateEmployeeHandler));
         request.ValidationResult = Validate(request);
 
         if (!request.IsValid())
@@ -58,7 +54,6 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Employees
             request.Request.LicenseNumber,
             request.Request.SalaryPerHour,
             request.Request.Salary,
-            new(),
             matchingBranches);
         await _employeeRepository.Create(employee);
         await _unitOfWork.CommitChangesAsync();
@@ -66,11 +61,11 @@ namespace LTW.Organization.Application.Features.CommandHandlers.Employees
         var employeeViewModel = _mapper.Map<EmployeeViewModel>(employee);
         var response = new CreateEmployeeCommandResponse(employeeViewModel);
 
-        await _loggerService.LogInfoAsync(
-         null,
-         "End Handle Request",
-         nameof(CreateEmployeeHandler),
-         response);
+        //await _loggerService.LogInfoAsync(
+        // null,
+        // "End Handle Request",
+        // nameof(CreateEmployeeHandler),
+        // response);
 
         return response;
       }

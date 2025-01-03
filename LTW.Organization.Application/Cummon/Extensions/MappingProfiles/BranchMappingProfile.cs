@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
 using LTW.Organization.Application.Dtos.Branchs;
 using LTW.Organization.Application.Features.ViewModel.Branchs;
+using LTW.Organization.Domain.Primitives.Entities.Branchs;
 
 namespace LTW.Organization.Application.Cummon.Extensions.MappingProfiles
 {

@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.DomainObjects;
+﻿using LTW.Core.DomainObjects;
 using LTW.Incident.Domain.Primitives.Entities.Incidents.Enums;
 
 namespace LTW.Incident.Domain.Primitives.Entities.Incidents

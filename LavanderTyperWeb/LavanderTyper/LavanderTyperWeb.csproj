@@ -20,10 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LavanderTyper.Application\LavanderTyperWeb.Application.csproj" />
-    <ProjectReference Include="..\LavanderTyper.Core\LavanderTyperWeb.Core.csproj" />
-    <ProjectReference Include="..\LavanderTyper.Data\LavanderTyperWeb.Data.csproj" />
-    <ProjectReference Include="..\LavanderTyper.Infrastructure\LavanderTyperWeb.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\LTW.Core\LTW.Core.csproj" />
   </ItemGroup>
 
 </Project>

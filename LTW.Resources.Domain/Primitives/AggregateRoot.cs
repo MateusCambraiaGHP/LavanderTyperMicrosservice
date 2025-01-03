@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.DomainObjects;
+﻿using LTW.Core.DomainObjects;
 
 namespace LTW.Resources.Domain.Primitives
 {

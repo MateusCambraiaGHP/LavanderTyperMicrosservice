@@ -1,26 +1,22 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Incident.Application.Features.Queries.Incidents;
 using LTW.Incident.Application.Features.Responses.Incidents;
 using LTW.Incident.Application.Features.ViewModel.Incidents;
+using LTW.Incident.Domain.Primitives.Common.Interfaces.Repositories;
 
 namespace LTW.Incident.Application.Features.QueryHandlers.Incidents
 {
   public class GetIncidentByIdHandler : Handler<GetIncidentByIdQuery, GetIncidentByIdQueryResponse>
   {
     private readonly IIncidentRepository _incidentRepository;
-    private readonly ILoggerService _loggerService;
 
     public GetIncidentByIdHandler(
         IMapper mapper,
-        ILoggerService loggerService,
         IIncidentRepository incidentRepository)
         : base(mapper)
     {
-      _loggerService = loggerService;
       _incidentRepository = incidentRepository;
     }
 
@@ -28,20 +24,20 @@ namespace LTW.Incident.Application.Features.QueryHandlers.Incidents
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(GetIncidentByIdHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(GetIncidentByIdHandler));
 
         var currentIncident = await _incidentRepository.GetAsync(ep => ep.Id == request.Id, null, null);
         var incidentMap = _mapper.Map<IncidentViewModel>(currentIncident.FirstOrDefault());
 
         var response = new GetIncidentByIdQueryResponse(incidentMap);
-        await _loggerService.LogInfoAsync(
-            null,
-            "End Handle Request",
-            nameof(GetIncidentByIdHandler),
-            response);
+        //await _loggerService.LogInfoAsync(
+        //    null,
+        //    "End Handle Request",
+        //    nameof(GetIncidentByIdHandler),
+        //    response);
 
         return response;
       }

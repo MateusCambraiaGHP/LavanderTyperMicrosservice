@@ -1,4 +1,4 @@
-﻿using LavanderTyperWeb.Core.DomainObjects;
+﻿using LTW.Core.DomainObjects;
 
 namespace LTW.Incident.Domain.Primitives
 {
@@ -6,5 +6,4 @@ namespace LTW.Incident.Domain.Primitives
   {
     protected AggregateRoot() { }
   }
-
 }

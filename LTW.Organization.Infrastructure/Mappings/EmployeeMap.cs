@@ -1,5 +1,5 @@
-﻿using LavanderTyperWeb.Domain.Primitives.Entities.Branchs;
-using LavanderTyperWeb.Domain.Primitives.Entities.Employees;
+﻿using LTW.Organization.Domain.Primitives.Entities.Branchs;
+using LTW.Organization.Domain.Primitives.Entities.Employees;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

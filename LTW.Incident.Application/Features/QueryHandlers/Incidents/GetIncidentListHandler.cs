@@ -1,26 +1,22 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Incident.Application.Features.Queries.Incidents;
 using LTW.Incident.Application.Features.Responses.Incidents;
 using LTW.Incident.Application.Features.ViewModel.Incidents;
+using LTW.Incident.Domain.Primitives.Common.Interfaces.Repositories;
 
 namespace LTW.Incident.Application.Features.QueryHandlers.Incidents
 {
   public class GetIncidentListHandler : Handler<GetIncidentListQuery, GetIncidentListQueryResponse>
   {
     private readonly IIncidentRepository _incidentRepository;
-    private readonly ILoggerService _loggerService;
 
     public GetIncidentListHandler(
         IMapper mapper,
-        ILoggerService loggerService,
         IIncidentRepository incidentRepository)
         : base(mapper)
     {
-      _loggerService = loggerService;
       _incidentRepository = incidentRepository;
     }
 
@@ -28,21 +24,20 @@ namespace LTW.Incident.Application.Features.QueryHandlers.Incidents
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(GetIncidentListHandler));
-
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(GetIncidentListHandler));
 
         var incidentList = await _incidentRepository.GetAsync(null, null, null);
         var incidentListMap = _mapper.Map<List<IncidentViewModel>>(incidentList);
 
         var response = new GetIncidentListQueryResponse(incidentListMap);
-        await _loggerService.LogInfoAsync(
-            null,
-            "End Handle Request",
-            nameof(GetIncidentListHandler),
-            response);
+        //await _loggerService.LogInfoAsync(
+        //    null,
+        //    "End Handle Request",
+        //    nameof(GetIncidentListHandler),
+        //    response);
 
         return response;
       }

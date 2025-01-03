@@ -1,26 +1,22 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Organization.Application.Features.Queries.Companies;
 using LTW.Organization.Application.Features.Responses.Companies;
 using LTW.Organization.Application.Features.ViewModel.Companies;
+using LTW.Organization.Domain.Primitives.Common.Interfaces.Repositories;
 
 namespace LTW.Organization.Application.Features.QueryHandlers.Companies
 {
   public class GetCompanyListHandler : Handler<GetCompanyListQuery, GetCompanyListQueryResponse>
   {
     private readonly ICompanyRepository _companyRepository;
-    private readonly ILoggerService _loggerService;
 
     public GetCompanyListHandler(
         IMapper mapper,
-        ILoggerService loggerService,
         ICompanyRepository companyRepository)
         : base(mapper)
     {
-      _loggerService = loggerService;
       _companyRepository = companyRepository;
     }
 
@@ -28,20 +24,20 @@ namespace LTW.Organization.Application.Features.QueryHandlers.Companies
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(GetCompanyListHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(GetCompanyListHandler));
 
         var companyList = await _companyRepository.GetAsync(null, null, null);
         var companyListMap = _mapper.Map<List<CompanyViewModel>>(companyList);
 
         var response = new GetCompanyListQueryResponse(companyListMap);
-        await _loggerService.LogInfoAsync(
-            null,
-            "End Handle Request",
-            nameof(GetCompanyListHandler),
-            response);
+        //await _loggerService.LogInfoAsync(
+        //    null,
+        //    "End Handle Request",
+        //    nameof(GetCompanyListHandler),
+        //    response);
 
         return response;
       }

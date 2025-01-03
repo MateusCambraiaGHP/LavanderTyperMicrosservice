@@ -1,26 +1,22 @@
 ﻿using AutoMapper;
 using FluentValidation.Results;
-using LavanderTyperWeb.Core.Messages.CommonMessages;
-using LavanderTyperWeb.Domain.Primitives.Common.Interfaces.Repositories;
-using LavanderTyperWeb.Infrastructure.Loggers.Interfaces;
+using LTW.Core.Messages.CommonMessages;
 using LTW.Resources.Application.Features.Queries.Vehicles;
 using LTW.Resources.Application.Features.Responses.Vehicles;
 using LTW.Resources.Application.Features.ViewModel.Vehicles;
+using LTW.Resources.Domain.Primitives.Common.Interfaces.Repositories;
 
 namespace LTW.Resources.Application.Features.QueryHandlers.Vehicles
 {
   public class GetVehicleByIdHandler : Handler<GetVehicleByIdQuery, GetVehicleByIdQueryResponse>
   {
     private readonly IVehicleRepository _vehicleRepository;
-    private readonly ILoggerService _loggerService;
 
     public GetVehicleByIdHandler(
         IMapper mapper,
-        ILoggerService loggerService,
         IVehicleRepository vehicleRepository)
         : base(mapper)
     {
-      _loggerService = loggerService;
       _vehicleRepository = vehicleRepository;
     }
 
@@ -28,20 +24,20 @@ namespace LTW.Resources.Application.Features.QueryHandlers.Vehicles
     {
       try
       {
-        await _loggerService.LogInfoAsync(
-            request,
-            "Start Handle Request",
-            nameof(GetVehicleByIdHandler));
+        //await _loggerService.LogInfoAsync(
+        //    request,
+        //    "Start Handle Request",
+        //    nameof(GetVehicleByIdHandler));
 
         var currentVehicle = await _vehicleRepository.GetAsync(ep => ep.Id == request.Id, null, null);
         var vehicleMap = _mapper.Map<VehicleViewModel>(currentVehicle.FirstOrDefault());
 
         var response = new GetVehicleByIdQueryResponse(vehicleMap);
-        await _loggerService.LogInfoAsync(
-            null,
-            "End Handle Request",
-            nameof(GetVehicleByIdHandler),
-            response);
+        //await _loggerService.LogInfoAsync(
+        //    null,
+        //    "End Handle Request",
+        //    nameof(GetVehicleByIdHandler),
+        //    response);
 
         return response;
       }
