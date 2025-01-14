@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LTW.Resources.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af1a229df439fed5decca2e4cd3feeb6e63b6091")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1122f728a30e351750cb8224b71f9b22c2f23cf")]
 [assembly: System.Reflection.AssemblyProductAttribute("LTW.Resources.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LTW.Resources.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
