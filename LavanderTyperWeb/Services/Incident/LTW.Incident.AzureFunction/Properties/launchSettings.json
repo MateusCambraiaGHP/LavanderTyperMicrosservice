@@ -2,8 +2,14 @@
   "profiles": {
     "LTW.Incident.AzureFunction": {
       "commandName": "Project",
-      "commandLineArgs": "--port 7178",
-      "launchBrowser": false
+      "commandLineArgs": "--port 7178"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "DockerfileRunArguments": "--init",
+      "httpPort": 31349,
+      "useSSL": false
     }
   }
 }

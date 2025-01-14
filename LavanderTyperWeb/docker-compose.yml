@@ -1,31 +1,29 @@
 version: '3.4'
 
 services:
-  db:
-    image: mysql
-    container_name: mysql_db_container
-    environment:
-      TZ: UTC
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: lavander-typer-web
-      MYSQL_PASSWORD: root123
-    ports:
-      - 1433:3306
-  lavandertyperweb:
-    image: ${DOCKER_REGISTRY-}lavandertyperweb
-    container_name: lavander_typer_web_container
+  ltw.resources.api:
+    image: ${DOCKER_REGISTRY-}ltwresourcesapi
     build:
       context: .
-      dockerfile: LavanderTyper\Dockerfile
-    environment:
-      TZ: UTC
-      ASPNETCORE_ENVIRONMENT: Production
-    ports:
-      - 44300:80
-    depends_on:
-      - db
-  redis:
-    image: redis:latest
-    container_name: redis_db_container
-    ports:
-      - 6379:6379
+      dockerfile: Services/Resources/LTW.Resources.API/Dockerfile
+
+  ltw.payment.api:
+    image: ${DOCKER_REGISTRY-}ltwpaymentapi
+    build:
+      context: .
+      dockerfile: Services/Payment/LTW.Payment.API/Dockerfile
+
+
+  ltw.organization.api:
+    image: ${DOCKER_REGISTRY-}ltworganizationapi
+    build:
+      context: .
+      dockerfile: Services/Organization/LTW.Organization.API/Dockerfile
+
+
+  ltw.incident.azurefunction:
+    image: ${DOCKER_REGISTRY-}ltwincidentazurefunction
+    build:
+      context: .
+      dockerfile: Services/Incident/LTW.Incident.AzureFunction/Dockerfile
+

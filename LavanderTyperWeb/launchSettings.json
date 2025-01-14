@@ -4,7 +4,10 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "lavandertyperweb": "StartDebugging"
+        "ltw.resources.api": "StartDebugging",
+        "ltw.payment.api": "StartDebugging",
+        "ltw.organization.api": "StartDebugging",
+        "ltw.incident.azurefunction": "StartDebugging"
       }
     }
   }
