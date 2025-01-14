@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LTW.Core\LTW.Core.csproj" />
+	  <ProjectReference Include="..\..\..\BuildingBlocks\Core\LTW.Core\LTW.Core.csproj" />
     <ProjectReference Include="..\LTW.Resources.Domain\LTW.Resources.Domain.csproj" />
   </ItemGroup>
 

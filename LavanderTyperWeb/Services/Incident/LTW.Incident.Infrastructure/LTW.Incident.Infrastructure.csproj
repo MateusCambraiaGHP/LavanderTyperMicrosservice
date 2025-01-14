@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LTW.Core\LTW.Core.csproj" />
+	  <ProjectReference Include="..\..\..\BuildingBlocks\Core\LTW.Core\LTW.Core.csproj" />
     <ProjectReference Include="..\LTW.Incident.Domain\LTW.Incident.Domain.csproj" />
   </ItemGroup>
 

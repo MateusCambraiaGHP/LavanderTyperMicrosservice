@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LTW.Core\LTW.Core.csproj" />
+	  <ProjectReference Include="..\..\..\BuildingBlocks\Core\LTW.Core\LTW.Core.csproj" />
   </ItemGroup>
 
 </Project>
