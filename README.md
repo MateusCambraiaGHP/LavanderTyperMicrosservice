@@ -11,7 +11,7 @@ A brief description of what this project does and who it's for
 
 ## Authors
 
-- [@octokatherine](https://github.com/MateusCambraiaGHP)
+- [@MateusCambraia](https://github.com/MateusCambraiaGHP)
 
 
 ## Documentation
