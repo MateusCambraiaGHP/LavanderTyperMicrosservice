@@ -1,0 +1,83 @@
+# Ignorar diretórios de build
+bin/
+obj/
+Debug/
+Release/
+
+# Ignorar pacotes NuGet restaurados
+*.nupkg
+*.snupkg
+packages/
+.nuget/
+
+# Ignorar configurações e arquivos de usuário
+.vs/
+*.user
+*.suo
+*.csproj.user
+*.dbmdl
+*.opendb
+*.pfx
+*.publishsettings
+*.localhistory/
+
+# Ignorar logs, lock files e caches
+*.log
+*.lock.json
+*.pidb
+*.svclog
+*.cache
+*.config
+
+# Ignorar arquivos gerados
+*.dll
+*.exe
+*.pdb
+*.class
+*.jar
+*.pyc
+*.so
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignorar arquivos temporários
+~$*
+*.tmp
+*.bak
+*.swp
+*.orig
+*.rej
+
+# Ignorar IDEs e editores
+.idea/
+*.vscode/
+*.code-workspace
+
+# Ignorar resultados de teste
+TestResults/
+*.trx
+*.coverage
+
+# Ignorar arquivos de publicação
+.publish/
+*.publish/
+
+# Ignorar arquivos de backup do Git
+*.orig
+*.rej
+
+# Ignorar dependências específicas
+node_modules/
+bower_components/
+
+# Ignorar ferramentas específicas
+*.tlog
+*.idb
+
+# Ignorar arquivos do Rider/JetBrains
+.idea/
+*.idea/
+*.sln.iml
